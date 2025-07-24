@@ -3,6 +3,7 @@ add_library(DeviceManagerLib STATIC)
 target_sources(DeviceManagerLib
     PRIVATE
         include/Device.h
+		include/DeviceType.h
         src/Device.cpp
         src/Globals.h
         src/Globals.cpp

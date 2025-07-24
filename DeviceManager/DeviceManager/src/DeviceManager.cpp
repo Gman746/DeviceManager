@@ -1,9 +1,10 @@
-// Copyright © Schueco Digital GmbH 2023
+// Copyright ï¿½ Schueco Digital GmbH 2023
 // @Author: Konstantin Nikkel
 
-#include <vector>
 
 #include "Device.h"
+#include "DeviceType.h"
+#include <vector>
 
 std::vector<Device> generateData( size_t count )
 {
@@ -14,9 +15,13 @@ std::vector<Device> generateData( size_t count )
 		const std::string deviceName = "device " + std::to_string( current );
 		const std::string desc = "this is dev no " + std::to_string( current );
 
-		auto device = Device( deviceName, desc );
+		DeviceType type = ( current % 2 == 0 ) ? DeviceType::Analog : DeviceType::Digital;
+
+		auto device = Device( deviceName, desc, type );
 		result.push_back( device );
+
 	}
+
 	return result;
 }
 
