@@ -4,11 +4,19 @@
 #include "Device.h"
 #include "Globals.h"
 
+std::string deviceTypeToString( DeviceType type )
+{
+	if ( type == DeviceType::Analog )
+		return "Analog";
+	else
+		return "Digital";
+}
 
-Device::Device( std::string a_name, std::string a_description, DeviceType type )
+
+Device::Device( std::string a_name, std::string a_description, DeviceType a_type )
 	: m_name( a_name )
 	, m_description( a_description )
-	, m_type( type )
+	, m_type( a_type )
 {
 	if ( m_type == DeviceType::Analog )
 	{
@@ -32,6 +40,7 @@ void Device::printInfo() const
 {
 	std::cout << " >>> \n";
 
+	std::cout << " - Type: " << deviceTypeToString( m_type ) << "\n";
 	std::cout << " - " << m_id << "\n";
 	std::cout << " - " << m_name << "\n";
 	std::cout << " - " << m_description << "\n";

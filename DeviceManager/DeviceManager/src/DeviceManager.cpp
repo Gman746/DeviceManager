@@ -1,10 +1,9 @@
-// Copyright � Schueco Digital GmbH 2023
+// Copyright @ Schueco Digital GmbH 2023
 // @Author: Konstantin Nikkel
-
+#include <vector>
 
 #include "Device.h"
 #include "DeviceType.h"
-#include <vector>
 
 std::vector<Device> generateData( size_t count )
 {
